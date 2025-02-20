@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+    //Funciones (solo se ejecutan cuando se las llama)    
+        //Esta función me dice si el número que le paso como parámetro es par (y devuelve true) o no (y devuelve false)
+        function esPar(numero){
+            if(numero % 2 == 0 )
+                return true;
+            else
+                return false;
+        }
+
+        //Esta función mostrar que pide un número, los pasos (de 1 en 1 o de 2 en 2), y el límite (0 para los par y 1 para los impar)
+        function mostrar(numero, paso, limite){
+            while(numero>=limite){
+                document.write(numero + ", ");
+                numero = numero - paso 
+            }
+
+        }
+
+
+
+    //Empieza el programa principal
+        const MSG_INTRODUCIR_NUMERO = "Introduzca un número"
+
+        //Constantes Par
+        const LIMITE_PAR = 0 //El último valor será 0
+        const PASO_PAR = 2 // a cada paso/iteración le quito 2
+
+        //Constantes Impar
+        const LIMITE_IMPAR = 1 // El último valor será 1
+        const PASO_IMPAR = 1// a cada paso/iteración le quito 1
+
+        //Variables
+
+            // Voy a asumir que el número que introduce el usuario es impar (iré de 1 en 1 hasta 1)
+        let limite = LIMITE_IMPAR
+        let paso = PASO_IMPAR
+
+            //Pido el número
+        let numero = prompt(MSG_INTRODUCIR_NUMERO)
+
+        //llamo a la función que he creado que me dice si un número es par (true) o no (false)
+        if(esPar(numero)){
+            //Si es par, mi estimación de que era impar estaba mal, lo cambio al límite y paso de par
+            limite = LIMITE_PAR
+            paso = PASO_PAR
+        }
+
+        //llamo a la función mostrar que lo pinta por pantalla
+        mostrar(numero, paso, limite)
+
+
+    </script>
+</body>
+</html>
